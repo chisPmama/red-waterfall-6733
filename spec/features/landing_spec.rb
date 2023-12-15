@@ -30,6 +30,7 @@ RSpec.describe "Landing Page" do
 
     it "when Fire Nation is selected, the search path should return the total number of Fire Nation people" do
       expect(page).to have_content("Total People: 97")
+      save_and_open_page
     end
 
     xit "contains a list in full detail of the first 25 members of the Fire Nation" do

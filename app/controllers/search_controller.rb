@@ -7,8 +7,9 @@ class SearchController < ApplicationController
 
     data = JSON.parse(response.body, symbolize_names: true)
 
-    @member_results = data.each do |details|
-      Member.new(details)
+    @member_results = []
+    data.each do |details|
+      @member_results << Member.new(details)
     end
   end
 end
