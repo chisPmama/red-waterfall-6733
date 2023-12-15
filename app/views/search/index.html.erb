@@ -1,16 +1,18 @@
-<%= button_to "Return to Landing", root_path, method: :get %>
+<br><%= button_to "Return to Landing", root_path, method: :get %>
 
 <h2> Search Results for <%= @nation %></h2>
 <h4>Total People: <%= @member_results.count %></h4>
 <ol>
-    <%@member_results.first(25).each do |m| %>
-    <h3><li><%= m.name %></h3>
-      Allies: <%= m.allies.join(", ") %>
-      <br><br>
-      Enemies: <%= m.enemies.join(", ") %>
-      <br><br>
-      Affiliation: <%= m.affiliation %>
-      <br>
-    </li>
-    <% end %>
+  <%@member_results.first(25).each do |m| %>
+    <div id="member-<%=m.id%>">
+      <h3><li><%= m.name %></h3>
+        Allies: <%= m.allies.join(", ") %>
+        <br>
+        Enemies: <%= m.enemies.join(", ") %>
+        <br>
+        Affiliation: <%= m.affiliation %>
+        <br>
+      </li>
+    </div>
+  <% end %>
 </ol>

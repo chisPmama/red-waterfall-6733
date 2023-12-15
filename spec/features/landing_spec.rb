@@ -59,8 +59,14 @@ RSpec.describe "Landing Page" do
     end
 
     it "for members with no enemies or allies, return none" do
-      expect(page).to have_content("Allies: None")
-      expect(page).to have_content("Enemies: None")
+      within("#member-5cf5679a915ecad153ab691c") do 
+        expect(page).to have_content("Enemies: None")
+      end 
+
+      within("#member-5cf5679a915ecad153ab691d") do 
+        expect(page).to have_content("Allies: None")
+        expect(page).to have_content("Enemies: None")
+      end 
     end
   end
 end
