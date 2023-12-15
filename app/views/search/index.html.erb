@@ -6,6 +6,8 @@
   <%@member_results.first(25).each do |m| %>
     <div id="member-<%=m.id%>">
       <h3><li><%= m.name %></h3>
+        <%= image_tag m.photo_url, width: "200"if m.photo_url.present?%>
+        <br>
         Allies: <%= m.allies.join(", ") %>
         <br>
         Enemies: <%= m.enemies.join(", ") %>
