@@ -1,4 +1,7 @@
 <br><%= button_to "Return to Landing", root_path, method: :get %>
+<br>
+<%= image_tag "https://static.wikia.nocookie.net/villains/images/e/ec/Fire_nation_fullview.png/revision/latest?cb=20190308195048", width: "100" %>
+
 
 <h2> Search Results for <%= @nation.split('+').map(&:capitalize).join(' ') %></h2>
 <h4>Total People: <%= @member_results.count %></h4>

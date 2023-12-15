@@ -56,6 +56,7 @@ RSpec.describe "Landing Page" do
       expect(page).to have_content("Enemies", count: 25)
       expect(page).to have_content("Allies", count: 25)
       expect(page).to have_content("Affiliation", count: 25)
+      save_and_open_page
     end
 
     it "for members with no enemies or allies, return none" do
