@@ -6,6 +6,7 @@
    <div class="airbender-container">
    <%= image_tag("avatar.jpg", class: "airbender") %>
    </div>
+
    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
    <ul class="nav navbar-nav">
       <%= form_with url: search_path, method: :get, data: {turbo: false}, local: true do |form| %>
