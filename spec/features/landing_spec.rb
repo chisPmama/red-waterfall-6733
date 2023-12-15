@@ -17,6 +17,16 @@ require "rails_helper"
 
 RSpec.describe "Landing Page" do
   before(:each) do
+    json_response = File.read('spec/fixtures/fire_nation_results.json')
+    stub_request(:get, "https://last-airbender-api.fly.dev/api/v1/characters?affiliation=fire%20nation&perPage=100").
+                with(
+                  headers: {
+                'Accept'=>'*/*',
+                'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+                'User-Agent'=>'Faraday v2.7.12'
+                  }).
+                to_return(status: 200, body: json_response, headers: {})
+
     visit root_path
     expect(page).to have_field(:nation)
     select 'Fire Nation', from: :nation
