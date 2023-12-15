@@ -1,6 +1,6 @@
 <br><%= button_to "Return to Landing", root_path, method: :get %>
 
-<h2> Search Results for <%= @nation %></h2>
+<h2> Search Results for <%= @nation.split('+').map(&:capitalize).join(' ') %></h2>
 <h4>Total People: <%= @member_results.count %></h4>
 <ol>
   <%@member_results.first(25).each do |m| %>
