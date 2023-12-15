@@ -1,6 +1,9 @@
 <br><%= button_to "Return to Landing", root_path, method: :get %>
 <br>
-<%= image_tag "https://static.wikia.nocookie.net/villains/images/e/ec/Fire_nation_fullview.png/revision/latest?cb=20190308195048", width: "100" %>
+<%= image_tag "https://static.wikia.nocookie.net/villains/images/e/ec/Fire_nation_fullview.png/revision/latest?cb=20190308195048", width: "100" if @nation == "red+nation"%>
+<%= image_tag "https://ih1.redbubble.net/image.625123531.6512/flat,750x,075,f-pad,750x1000,f8f8f8.u2.jpg", width: "100" if @nation == "water+tribe"%>
+<%= image_tag "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/cf306811-415e-48b6-aa06-7760c9ac3964/de96bg6-15e7420e-ce3c-4a05-b858-c4d9228845b2.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2NmMzA2ODExLTQxNWUtNDhiNi1hYTA2LTc3NjBjOWFjMzk2NFwvZGU5NmJnNi0xNWU3NDIwZS1jZTNjLTRhMDUtYjg1OC1jNGQ5MjI4ODQ1YjIucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.mJCTHtpn1gsfJAENtzLJKrvjuA8Aj5KANBRQezHuCEA", width: "100" if @nation == "air+nomads"%>
+<%= image_tag "https://i.pinimg.com/474x/0b/6f/7c/0b6f7c1926c94d2dc3a70506bea0884a.jpg", width: "100" if @nation == "earth+kingdom"%>
 
 
 <h2> Search Results for <%= @nation.split('+').map(&:capitalize).join(' ') %></h2>
