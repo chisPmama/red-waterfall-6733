@@ -30,15 +30,27 @@ RSpec.describe "Landing Page" do
 
     it "when Fire Nation is selected, the search path should return the total number of Fire Nation people" do
       expect(page).to have_content("Total People: 97")
-      save_and_open_page
     end
 
-    xit "contains a list in full detail of the first 25 members of the Fire Nation" do
-
+    it "contains a list in full detail of the first 25 members of the Fire Nation" do
+      expect(page).to_not have_content("26")
     end
 
-    xit "for each member, returns the name, list of allies, enemies, and any affiliations" do
+    it "for each member, returns the name, list of allies, enemies, and any affiliations" do
+      expect(page).to have_content("Azula")
+      expect(page).to have_content("Allies: Ozai, Zuko")
+      expect(page).to have_content("Enemies: Iroh, Zuko, Kuei, Long Feng, Mai, Ty Lee, Ursa")
+      expect(page).to have_content("Affiliation: Azula's team (formerly) Dai Li (formerly) Fire Nation Fire Nation Royal Family Fire Warriors Royal Fire Academy for Girls (formerly)")
 
+      expect(page).to have_content("Affiliation", count: 25)
+      expect(page).to have_content("Enemies", count: 25)
+      expect(page).to have_content("Allies", count: 25)
+      expect(page).to have_content("Affiliation", count: 25)
+    end
+
+    it "for members with no enemies or allies, return none" do
+      expect(page).to have_content("Allies: None")
+      expect(page).to have_content("Enemies: None")
     end
   end
 end

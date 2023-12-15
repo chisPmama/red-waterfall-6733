@@ -3,13 +3,13 @@
 <h2> Search Results for <%= @nation %></h2>
 <h4>Total People: <%= @member_results.count %></h4>
 <ol>
-    <% @member_results.each do |m| %>
+    <%@member_results.first(25).each do |m| %>
     <h3><li><%= m.name %></h3>
       Allies: <%= m.allies.join(", ") %>
       <br><br>
       Enemies: <%= m.enemies.join(", ") %>
       <br><br>
-      Affiliation: <%= m.affilliation %>
+      Affiliation: <%= m.affiliation %>
       <br>
     </li>
     <% end %>
